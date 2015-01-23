@@ -49,7 +49,7 @@
 		
 	<input id="modernizr" name="modernizr" type="hidden">
 	
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<div class="form-group"><button type="submit" class="btn btn-primary">Submit</button></div>
 	
 </form>
 

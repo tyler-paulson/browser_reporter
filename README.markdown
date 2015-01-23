@@ -6,7 +6,7 @@ After filling out a form with just a single field for their name, the script ema
 
 ## Requirements
 
-PHP 5 and a Mandrill API key with the [Mandrill PHP API Client](https://mandrillapp.com/api/docs/index.php.html) installed in /mandrill.
+PHP 5 and a Mandrill API key with the [Mandrill PHP API Client](https://mandrillapp.com/api/docs/index.php.html) installed in `/mandrill`.
 
 ## Modernizr
 
