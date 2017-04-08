@@ -1,3 +1,7 @@
+<?php
+require_once('./vendor/autoload.php');
+use Postmark\PostmarkClient;
+?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -36,19 +40,14 @@ if($_POST['ua'] != '') { // Check if the submission is coming from the form
 	
 	// Send the emails
 	
-	require_once 'mandrill/src/Mandrill.php' ;
+	$client = new PostmarkClient(POSTMARK_TOKEN);
 	
-	$Mandrill = new Mandrill(MANDRILL_KEY);
-		
-	$message = array(
-		'from_email' => NOREPLY_EMAIL,
-		'from_name' => $_POST['name'],
-		'subject' => 'Browser Report',
-		'to' => unserialize(TO_ARRAY),
-		'text' => $results
+	$client->sendEmail(
+	  NOREPLY_EMAIL,
+	  TO_EMAILS,
+	  'Browser Report - '.$_POST['name'],
+	  nl2br($results)
 	);
-	
-	$Mandrill->messages->send($message, true);
 	
 	// Confimration
 	
