@@ -1,2 +1,3 @@
-mandrill
 config.php
+composer.lock
+vendor/*
